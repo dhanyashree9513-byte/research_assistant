@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Secrets
+.env
+*.key
+
+# Run data (state, logs) stays local
+data/*
+!data/.gitkeep
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

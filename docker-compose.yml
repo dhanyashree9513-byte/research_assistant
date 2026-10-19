@@ -1,0 +1,9 @@
+services:
+  redis:
+    image: redis:8.2  # Redis 8 ships JSON + search, which LangGraph's Redis checkpointer needs
+    container_name: research-redis
+    ports: ["6379:6379"]
+    command: ["redis-server", "--appendonly", "yes"]  # also write to disk, so Redis itself survives a restart
+    volumes: [redis-data:/data]
+volumes:
+  redis-data:
